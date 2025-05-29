@@ -2,6 +2,7 @@ import os
 import uuid
 
 import chromadb
+from chromadb.api.models import Collection
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
@@ -11,12 +12,6 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from sentence_transformers import SentenceTransformer
 
 load_dotenv()
-
-API_KEY = os.environ.get("GOGGLE_API_KEY", None)
-genai_client = genai.Client(api_key=API_KEY)
-# chromadb_client = chromadb.PersistentClient(path="./chromadb")
-chromadb_client = chromadb.Client()
-chromadb_collection = chromadb_client.get_or_create_collection(name="rag_demo")
 
 
 def load_document(file_path: str) -> list[Document]:
@@ -31,8 +26,8 @@ def create_embeddings(strings: list[str]) -> list[float]:
     return embeddings.tolist()
 
 
-def save_embeddings(documents: list[str], embeddings: list[float]) -> None:
-    chromadb_collection.add(
+def save_embeddings(collection: Collection, documents: list[str], embeddings: list[float]) -> None:
+    collection.add(
         documents=documents,
         embeddings=embeddings,
         ids=[uuid.uuid4().hex for _ in range(len(documents))],
@@ -51,17 +46,35 @@ def build_query_content(query: str, context: list[str]) -> str:
 
 
 def main() -> None:
+    print("-" * 5, end="")
+    print("CONFIGURING APPLICATION", end="")
+    print("-" * 5)
+
+    API_KEY = os.environ.get("GOGGLE_API_KEY", None)
+    if not API_KEY:
+        print("GOGGLE_API_KEY environment variable not set")
+        return
+
+    DOCUMENT_PATH = os.environ.get("DOCUMENT_PATH", None)
+    if not DOCUMENT_PATH:
+        print("DOCUMENT_PATH environment variable not set")
+        return
+
+    genai_client = genai.Client(api_key=API_KEY)
+
+    print("Creating ChromaDB collection...", end="", flush=True)
+    # chromadb_client = chromadb.PersistentClient(path="./chromadb")
+    chromadb_client = chromadb.Client()
+    chromadb_collection = chromadb_client.get_or_create_collection(name="rag_demo")
+    print("✅")
+
     # SET UP
     # 1. Load document and split using LangChain
     # 2. Create embeddings for the split document using Gemini API
     # 3. Create ChromaDB collection and add embeddings and document splits with ids
 
-    print("-" * 5, end="")
-    print("CONFIGURING APPLICATION", end="")
-    print("-" * 5)
-
     print("Loading documents... ", end="", flush=True)
-    documents = load_document(os.environ.get("DOCUMENT_PATH"))
+    documents = load_document(DOCUMENT_PATH)
     print(f"loaded {len(documents)} chucks ✅")
 
     text_splitter = RecursiveCharacterTextSplitter(
@@ -77,7 +90,7 @@ def main() -> None:
     print(f"embedded {len(embeddings)} documents ✅")
 
     print("Saving embeddings...", end="", flush=True)
-    save_embeddings(documents=document_strings, embeddings=embeddings)
+    save_embeddings(collection=chromadb_collection, documents=document_strings, embeddings=embeddings)
     print("✅")
 
     print("-" * 5, end="")
