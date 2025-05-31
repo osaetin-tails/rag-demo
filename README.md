@@ -17,7 +17,7 @@ The demo application uses:
 ## Setup
 
 1. Make a copy of `.env.template`, renaming the copy to `.env`.
-2. Get a [Gemini API key](https://ai.google.dev/gemini-api/docs/api-key) and set its value for `GOGGLE_API_KEY` in the `.env` file
+2. Get a [Gemini API key](https://ai.google.dev/gemini-api/docs/api-key) and set its value for `GOOGLE_API_KEY` in the `.env` file
 3. Set the value of the path to your document for `DOCUMENT_PATH` environment variable.
 4. In the root directory create a virtual environment `python3 -m venv .venv` or `uv venv`.
 

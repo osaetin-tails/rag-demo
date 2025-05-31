@@ -50,9 +50,9 @@ def main() -> None:
     print("CONFIGURING APPLICATION", end="")
     print("-" * 5)
 
-    API_KEY = os.environ.get("GOGGLE_API_KEY", None)
+    API_KEY = os.environ.get("GOOGLE_API_KEY", None)
     if not API_KEY:
-        print("GOGGLE_API_KEY environment variable not set")
+        print("GOOGLE_API_KEY environment variable not set")
         return
 
     DOCUMENT_PATH = os.environ.get("DOCUMENT_PATH", None)
