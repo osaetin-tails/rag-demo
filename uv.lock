@@ -225,7 +225,7 @@ wheels = [
 
 [[package]]
 name = "chromadb"
-version = "1.0.16"
+version = "1.0.19"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "bcrypt" },
@@ -256,13 +256,13 @@ dependencies = [
     { name = "typing-extensions" },
     { name = "uvicorn", extra = ["standard"] },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/15/2a/5b7e793d2a27c425e9f1813e9cb965b70e9bda08b69ee15a10e07dc3e59a/chromadb-1.0.16.tar.gz", hash = "sha256:3c864b5beb5e131bdc1f83c0b63a01ec481c6ee52028f088563ffba8478478e1", size = 1241545, upload-time = "2025-08-08T00:25:41.414Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/3e/d4/89fc3ba6236f7edce18195ddaa16d13d68e60dc9b3b5c76f1e4e189546fd/chromadb-1.0.19.tar.gz", hash = "sha256:167243120ab3a6e30ba65795659c108940af336c7f8e935ca1b06b885dc844a5", size = 1246143, upload-time = "2025-08-18T09:39:22.534Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a3/9d/bffcc814272c9b7982551803b2d45b77f39eeea1b9e965c00c05ee81c649/chromadb-1.0.16-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:144163ce7ca4f4448684d5d0c13ebb37c4d68490ecb60967a95d05cea30e0d2d", size = 18942157, upload-time = "2025-08-08T00:25:38.459Z" },
-    { url = "https://files.pythonhosted.org/packages/58/4e/de0086f3cbcfd667d75d112bb546386803ab5335599bf7099272a675e98b/chromadb-1.0.16-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:4ebcc5894e6fbb6b576452bbf4659746bfe58d9daf99a18363364e9497434bd2", size = 18147831, upload-time = "2025-08-08T00:25:35.546Z" },
-    { url = "https://files.pythonhosted.org/packages/0e/7f/a8aff4ce96281bcb9731d10b2554f41963dd0b47acb4f90a78b2b7c4f199/chromadb-1.0.16-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:937051fc3aae94f7c171503d8f1f7662820aacc75acf45f28d3656c75c5ff1f8", size = 18682195, upload-time = "2025-08-08T00:25:29.654Z" },
-    { url = "https://files.pythonhosted.org/packages/a3/9c/2a97d0257176aae472dff6f1ef1b7050449f384e420120e0f31d2d8f532f/chromadb-1.0.16-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c0f5c5ad0c59154a9cab1506b857bab8487b588352e668cf1222c54bb9d52daa", size = 19635695, upload-time = "2025-08-08T00:25:32.68Z" },
-    { url = "https://files.pythonhosted.org/packages/96/8a/f7e810f3cbdc9186ba4e649dc32711b7ab2c23aba37cf61175f731d22293/chromadb-1.0.16-cp39-abi3-win_amd64.whl", hash = "sha256:2528c01bd8b3facca9d0e1ffac866767c386b94604df484fc792ee891c86e09a", size = 19641144, upload-time = "2025-08-08T00:25:43.446Z" },
+    { url = "https://files.pythonhosted.org/packages/72/73/928ea8c766b7de0f51bf558292b8ba14c902ca1a7169458d2ab1582f3d17/chromadb-1.0.19-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:d222f311bd08bd14d27e747bef7e253b486f6f8b1472c332524cd9ef7d986599", size = 19069220, upload-time = "2025-08-18T09:39:20.326Z" },
+    { url = "https://files.pythonhosted.org/packages/ad/1b/040a299ba6658a5d3e488f6b673ab63c54fe04de92e3d11e31cd93bc1675/chromadb-1.0.19-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:be98276fbe757a861b948afe7d1e483ffbc25185fd20a69c92b73e2a7b70e261", size = 18264184, upload-time = "2025-08-18T09:39:17.547Z" },
+    { url = "https://files.pythonhosted.org/packages/6f/c8/9468d7fe3815a80422f446d4ebc5a721bf6a43011bb3cd4b139a61b59fbb/chromadb-1.0.19-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a7b01725c2107a030254a91e1dc1084744d1719ab4f69fc46be944dea77f1940", size = 18835550, upload-time = "2025-08-18T09:39:11.135Z" },
+    { url = "https://files.pythonhosted.org/packages/d7/c8/05213cee9041b149c091e13507be89d8c4da9dee951ab9f57531138fc108/chromadb-1.0.19-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:549984ffacd15b07e7d55b15de5c2360be55f60317407aa6317c4403cd84e913", size = 19755336, upload-time = "2025-08-18T09:39:14.529Z" },
+    { url = "https://files.pythonhosted.org/packages/88/0c/860285b9644be008f9717ccdacff3210bdebb50ba5c25996f2cdad7407fb/chromadb-1.0.19-cp39-abi3-win_amd64.whl", hash = "sha256:5e7900ae9fc4e687e0fd74f9dc6757243105caca14550eac97a79284e0b4047a", size = 19778657, upload-time = "2025-08-18T09:39:24.373Z" },
 ]
 
 [[package]]
